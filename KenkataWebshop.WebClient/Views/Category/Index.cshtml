@@ -1,4 +1,6 @@
-﻿@{
+﻿@using KenkataWebshop.WebClient.Controllers
+@model List<CategoryViewModel>
+@{
     ViewData["Title"] = "KenKata - Categories";
 }
 
@@ -11,27 +13,12 @@
         reliable way
     </p>
     <div class="d-flex">
-        <div class="me-3">
-            <h5>Men</h5>
-        </div>
-        <div class="me-3">
-            <h5>Women</h5>
-        </div>
-        <div class="me-3">
-            <h5>Kids</h5>
-        </div>
-        <div class="me-3">
-            <h5>Shoes</h5>
-        </div>
-        <div class="me-3">
-            <h5>Hats</h5>
-        </div>
-        <div class="me-3">
-            <h5>Sunglasses</h5>
-        </div>
-        <div>
-            <h5>Watches</h5>
-        </div>
+        @foreach (var item in Model)
+        {
+            <div class="me-3">
+                <h5>@item.Category</h5>
+            </div>
+        }
     </div>
 </section>
 <!-- #endregion -->
