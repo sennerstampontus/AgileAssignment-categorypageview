@@ -15,7 +15,7 @@ namespace KenkataWebshop.WebClient.Models.Mapping
             return viewModel;
         }
 
-        public static List<CategoryViewModel> MapToViewModel(this List<ProductDto> dtos)
+        public static List<CategoryViewModel> MapToViewModel(this List<CategoryDto> dtos)
         {
             var viewModels = new List<CategoryViewModel>();
 
