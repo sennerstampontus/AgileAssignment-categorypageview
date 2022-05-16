@@ -18,7 +18,7 @@ namespace KenkataWebshop.WebClient.Controllers
         public async Task <IActionResult> Index()
         {
 
-            var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>("https://localhost:7009/swagger/index.html");
+            var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>("https://localhost:7009/api/Category");
             var categoryViewModels = categories.MapToViewModel();
 
 
