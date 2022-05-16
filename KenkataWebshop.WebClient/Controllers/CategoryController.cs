@@ -1,4 +1,5 @@
 ﻿using KenkataWebshop.Data;
+using KenkataWebshop.WebClient.Models.Mapping;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KenkataWebshop.WebClient.Controllers
@@ -18,7 +19,8 @@ namespace KenkataWebshop.WebClient.Controllers
         {
 
             var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>("https://localhost:7009/swagger/index.html");
-            
+            var categoryViewModels = categories.MapToViewModel();
+
 
             //var categoryViewModels = new List<CategoryViewModel>
             //{
@@ -30,7 +32,7 @@ namespace KenkataWebshop.WebClient.Controllers
             //    new CategoryViewModel{Category = "Watches"}
             //};
 
-            return View();
+            return View(categoryViewModels);
         }
     }
 }
