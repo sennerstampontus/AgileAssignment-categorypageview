@@ -14,6 +14,10 @@ namespace KenkataWebshop.WebClient.Controllers
         {
             _httpClient = httpClient;
         }
+        public CategoryController()
+        {
+
+        }
 
         [Route("Category")]
         public async Task<IActionResult> Index()
