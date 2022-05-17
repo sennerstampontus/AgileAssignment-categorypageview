@@ -1,17 +1,20 @@
 ﻿using KenkataWebshop.Data;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace KenkataWebshop.WebApi.Controllers
 {
     
+
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
+        
 
         private readonly SqlContext _sqlContext;
+        
 
         public CategoryController(SqlContext sqlContext)
         {
@@ -19,9 +22,16 @@ namespace KenkataWebshop.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<List<CategoryDto>>> GetAll()
         {
-            var categories = await _sqlContext.Categories.ToListAsync();
+            List<CategoryDto> categories = new List<CategoryDto>();
+
+            var _categories = await _sqlContext.Categories.ToListAsync();
+            foreach (var category in _categories)
+            {
+                categories.Add(new CategoryDto() { Category = category.Name});
+            }
+            
             
             return Ok(categories);
         }
