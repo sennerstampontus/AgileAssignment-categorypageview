@@ -1,4 +1,5 @@
 ﻿using KenkataWebshop.Data;
+using KenkataWebshop.WebClient.Models;
 using KenkataWebshop.WebClient.Models.Mapping;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,17 +23,17 @@ namespace KenkataWebshop.WebClient.Controllers
             var categoryViewModels = categories.MapToViewModel();
 
 
-            //var categoryViewModels = new List<CategoryViewModel>
-            //{
-            //    new CategoryViewModel{Category = "Men"},
-            //    new CategoryViewModel{Category = "Women"},
-            //    new CategoryViewModel{Category = "Kids"},
-            //    new CategoryViewModel{Category = "Shoes"},
-            //    new CategoryViewModel{Category = "Hats"},
-            //    new CategoryViewModel{Category = "Watches"}
-            //};
+            var _categoryViewModels = new List<CategoryViewModel>
+            {
+                new CategoryViewModel{Category = "Men"},
+                new CategoryViewModel{Category = "Women"},
+                new CategoryViewModel{Category = "Kids"},
+                new CategoryViewModel{Category = "Shoes"},
+                new CategoryViewModel{Category = "Hats"},
+                new CategoryViewModel{Category = "Watches"}
+            };
 
-            return View(categoryViewModels);
+            return View(_categoryViewModels);
         }
     }
 }
