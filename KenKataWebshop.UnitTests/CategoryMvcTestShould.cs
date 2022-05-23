@@ -17,7 +17,7 @@ namespace KenKataWebshop.UnitTests
 {
     public class CategoryMvcTestShould
     {
-
+       
         [Fact]
         public void Generate_View_with_ViewModel()
         {

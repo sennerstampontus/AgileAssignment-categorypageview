@@ -10,6 +10,10 @@ namespace KenkataWebshop.WebClient.Controllers
     {
         private readonly HttpClient _httpClient;
 
+        public CategoryController()
+        {
+        }
+
         public CategoryController(HttpClient httpClient)
         {
             _httpClient = httpClient;

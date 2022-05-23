@@ -1,3 +1,4 @@
+using KenkataWebshop.WebClient.Controllers;
 using KenkataWebshop.WebClient.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
